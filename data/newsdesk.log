@@ -1,0 +1,94 @@
+2026-03-18 10:52:07,498 [INFO] ✅  Database ready
+2026-03-18 10:52:07,498 [INFO] 📡  Fetcher started
+2026-03-18 10:52:07,498 [INFO] 🌐  NewsDesk → http://localhost:5050
+2026-03-18 10:52:07,516 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.92:5050
+2026-03-18 10:52:07,516 [INFO] [33mPress CTRL+C to quit[0m
+2026-03-18 10:52:10,102 [INFO] [fetcher] +30 new flashes
+2026-03-18 10:52:37,502 [INFO] 🤖  Summarizer started
+2026-03-18 10:52:41,612 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 10:52:46,213 [INFO] 127.0.0.1 - - [18/Mar/2026 10:52:46] "GET / HTTP/1.1" 200 -
+2026-03-18 10:52:46,508 [INFO] 127.0.0.1 - - [18/Mar/2026 10:52:46] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:52:46,510 [INFO] 127.0.0.1 - - [18/Mar/2026 10:52:46] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 10:52:46,809 [INFO] 127.0.0.1 - - [18/Mar/2026 10:52:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-18 10:53:46,726 [INFO] 127.0.0.1 - - [18/Mar/2026 10:53:46] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:53:46,728 [INFO] 127.0.0.1 - - [18/Mar/2026 10:53:46] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 10:54:46,731 [INFO] 127.0.0.1 - - [18/Mar/2026 10:54:46] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:54:46,733 [INFO] 127.0.0.1 - - [18/Mar/2026 10:54:46] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 10:55:46,728 [INFO] 127.0.0.1 - - [18/Mar/2026 10:55:46] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:55:46,730 [INFO] 127.0.0.1 - - [18/Mar/2026 10:55:46] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 10:56:02,143 [INFO] 127.0.0.1 - - [18/Mar/2026 10:56:02] "GET / HTTP/1.1" 200 -
+2026-03-18 10:56:02,232 [INFO] 127.0.0.1 - - [18/Mar/2026 10:56:02] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:56:02,234 [INFO] 127.0.0.1 - - [18/Mar/2026 10:56:02] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 10:56:03,104 [INFO] 127.0.0.1 - - [18/Mar/2026 10:56:03] "GET / HTTP/1.1" 200 -
+2026-03-18 10:56:03,156 [INFO] 127.0.0.1 - - [18/Mar/2026 10:56:03] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:56:03,157 [INFO] 127.0.0.1 - - [18/Mar/2026 10:56:03] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 10:57:03,721 [INFO] 127.0.0.1 - - [18/Mar/2026 10:57:03] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:57:03,722 [INFO] 127.0.0.1 - - [18/Mar/2026 10:57:03] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 10:57:10,838 [INFO] [fetcher] +2 new flashes
+2026-03-18 10:57:11,432 [INFO] ✅  Database ready
+2026-03-18 10:57:11,432 [INFO] 📡  Fetcher started
+2026-03-18 10:57:11,433 [INFO] 🌐  NewsDesk → http://localhost:5050
+2026-03-18 10:57:38,773 [INFO] ✅  Database ready
+2026-03-18 10:57:38,773 [INFO] 📡  Fetcher started
+2026-03-18 10:57:38,773 [INFO] 🌐  NewsDesk → http://localhost:5050
+2026-03-18 10:57:38,782 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.92:5050
+2026-03-18 10:57:38,782 [INFO] [33mPress CTRL+C to quit[0m
+2026-03-18 10:57:39,167 [INFO] [fetcher] +0 new flashes
+2026-03-18 10:57:59,662 [INFO] ✅  Database ready
+2026-03-18 10:57:59,662 [INFO] 📡  Fetcher started
+2026-03-18 10:57:59,662 [INFO] 🌐  NewsDesk → http://localhost:5050
+2026-03-18 10:57:59,673 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.92:5050
+2026-03-18 10:57:59,673 [INFO] [33mPress CTRL+C to quit[0m
+2026-03-18 10:57:59,948 [INFO] [fetcher] +0 new flashes
+2026-03-18 10:58:03,722 [INFO] 127.0.0.1 - - [18/Mar/2026 10:58:03] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:58:03,723 [INFO] 127.0.0.1 - - [18/Mar/2026 10:58:03] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 10:58:13,984 [INFO] 192.168.0.92 - - [18/Mar/2026 10:58:13] "GET / HTTP/1.1" 200 -
+2026-03-18 10:58:14,232 [INFO] 192.168.0.92 - - [18/Mar/2026 10:58:14] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:58:14,233 [INFO] 192.168.0.92 - - [18/Mar/2026 10:58:14] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 10:58:14,441 [INFO] 192.168.0.92 - - [18/Mar/2026 10:58:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-18 10:58:29,666 [INFO] 🤖  Summarizer started
+2026-03-18 10:58:33,444 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 10:59:03,719 [INFO] 127.0.0.1 - - [18/Mar/2026 10:59:03] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:59:03,721 [INFO] 127.0.0.1 - - [18/Mar/2026 10:59:03] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 10:59:14,715 [INFO] 192.168.0.92 - - [18/Mar/2026 10:59:14] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 10:59:14,715 [INFO] 192.168.0.92 - - [18/Mar/2026 10:59:14] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 11:00:02,697 [INFO] ✅  Database ready
+2026-03-18 11:00:02,697 [INFO] 📡  Fetcher started
+2026-03-18 11:00:02,697 [INFO] 🌐  NewsDesk → http://localhost:5050
+2026-03-18 11:00:02,706 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://192.168.0.92:5050
+2026-03-18 11:00:02,706 [INFO] [33mPress CTRL+C to quit[0m
+2026-03-18 11:00:03,718 [INFO] 127.0.0.1 - - [18/Mar/2026 11:00:03] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 11:00:03,721 [INFO] 127.0.0.1 - - [18/Mar/2026 11:00:03] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 11:00:05,783 [INFO] [fetcher] +0 new flashes
+2026-03-18 11:00:14,720 [INFO] 192.168.0.92 - - [18/Mar/2026 11:00:14] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 11:00:14,722 [INFO] 192.168.0.92 - - [18/Mar/2026 11:00:14] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 11:00:32,702 [INFO] 🤖  Summarizer started
+2026-03-18 11:00:38,668 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-18 11:01:04,264 [INFO] 127.0.0.1 - - [18/Mar/2026 11:01:04] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 11:01:04,266 [INFO] 127.0.0.1 - - [18/Mar/2026 11:01:04] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 11:01:14,711 [INFO] 192.168.0.92 - - [18/Mar/2026 11:01:14] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 11:01:14,712 [INFO] 192.168.0.92 - - [18/Mar/2026 11:01:14] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 11:02:03,713 [INFO] 127.0.0.1 - - [18/Mar/2026 11:02:03] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 11:02:03,715 [INFO] 127.0.0.1 - - [18/Mar/2026 11:02:03] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 11:02:14,709 [INFO] 192.168.0.92 - - [18/Mar/2026 11:02:14] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 11:02:14,710 [INFO] 192.168.0.92 - - [18/Mar/2026 11:02:14] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 11:03:14,798 [INFO] 192.168.0.92 - - [18/Mar/2026 11:03:14] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 11:03:14,809 [INFO] 192.168.0.92 - - [18/Mar/2026 11:03:14] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 11:03:15,709 [INFO] 127.0.0.1 - - [18/Mar/2026 11:03:15] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 11:03:15,711 [INFO] 127.0.0.1 - - [18/Mar/2026 11:03:15] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 11:04:14,726 [INFO] 192.168.0.92 - - [18/Mar/2026 11:04:14] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 11:04:14,727 [INFO] 192.168.0.92 - - [18/Mar/2026 11:04:14] "GET /api/stats HTTP/1.1" 200 -
+2026-03-18 11:04:15,734 [INFO] 127.0.0.1 - - [18/Mar/2026 11:04:15] "GET /api/digests HTTP/1.1" 200 -
+2026-03-18 11:04:15,736 [INFO] 127.0.0.1 - - [18/Mar/2026 11:04:15] "GET /api/stats HTTP/1.1" 200 -

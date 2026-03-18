@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>24HR MKT NEWS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080810;
+    --surface: #0f0f1a;
+    --border: #1c1c2e;
+    --border-bright: #2a2a40;
+    --gold: #c9a84c;
+    --gold-dim: #8a6e30;
+    --blue: #4c8ec9;
+    --text: #e2e0d8;
+    --muted: #5a5a72;
+    --green: #4cc97a;
+    --red: #c94c4c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Serif TC', serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* noise texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(8,8,16,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .wordmark {
+    font-family: 'DM Mono', monospace;
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    color: var(--gold);
+  }
+  .wordmark em { color: var(--muted); font-style: normal; }
+
+  .header-right {
+    display: flex; align-items: center; gap: 1.5rem;
+  }
+
+  .updated {
+    font-family: 'DM Mono', monospace;
+    font-size: .65rem;
+    color: var(--muted);
+    letter-spacing: .04em;
+  }
+
+  .pulse { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--green); margin-right: 6px; animation: blink 2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+  /* ── FILTER BAR ── */
+  .filter-wrap {
+    position: sticky; top: 60px; z-index: 99;
+    background: rgba(8,8,16,0.90);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: .6rem 2rem;
+    display: flex; flex-wrap: wrap; gap: .4rem;
+  }
+
+  .cat-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .04em;
+    padding: .3rem .75rem;
+    border: 1px solid var(--border-bright);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all .12s;
+  }
+  .cat-btn:hover { color: var(--text); border-color: var(--gold-dim); }
+  .cat-btn.active { background: var(--gold); color: #080810; border-color: var(--gold); font-weight: 500; }
+
+  /* ── MAIN LAYOUT ── */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 6rem;
+    position: relative; z-index: 1;
+  }
+
+  /* ── STATS ── */
+  .stats {
+    display: flex; gap: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+  }
+  .stat { font-family: 'DM Mono', monospace; font-size: .68rem; color: var(--muted); }
+  .stat strong { display: block; font-size: 1.6rem; color: var(--gold); font-weight: 500; letter-spacing: -.02em; line-height: 1.1; }
+
+  /* ── DIGEST CARDS ── */
+  .digest-list { display: flex; flex-direction: column; }
+
+  .card {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 1.4rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--border);
+    animation: rise .35s ease both;
+  }
+  .card.hidden { display: none; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .card-time {
+    font-family: 'DM Mono', monospace;
+    font-size: .62rem;
+    color: var(--muted);
+    padding-top: 3px;
+    line-height: 1.7;
+  }
+  .card-time .t-date { display: block; }
+  .card-time .t-time { display: block; color: var(--gold); font-size: .72rem; }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.45;
+    color: var(--text);
+    margin-bottom: .5rem;
+    letter-spacing: .01em;
+  }
+
+  .card-body {
+    font-size: .84rem;
+    color: #a8a6a0;
+    line-height: 1.85;
+    margin-bottom: .7rem;
+  }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: .6rem;
+    padding: .15rem .5rem;
+    border: 1px solid rgba(201,168,76,.25);
+    color: var(--gold-dim);
+    border-radius: 2px;
+    letter-spacing: .03em;
+  }
+
+  /* ── EMPTY ── */
+  .empty {
+    text-align: center;
+    padding: 5rem 0;
+    font-family: 'DM Mono', monospace;
+    font-size: .8rem;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border-bright); }
+
+  @media (max-width: 580px) {
+    header { padding: 0 1rem; }
+    .filter-wrap { padding: .5rem 1rem; }
+    main { padding: 1.5rem 1rem 5rem; }
+    .card { grid-template-columns: 1fr; gap: .4rem; }
+    .card-time { display: flex; gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wordmark">24HR<em>/</em>MKT NEWS</div>
+  <div class="header-right">
+    <div class="updated" id="updatedAt"><span class="pulse"></span>載入中…</div>
+  </div>
+</header>
+
+<div class="filter-wrap" id="filterWrap">
+  <button class="cat-btn active" data-cat="">全部</button>
+</div>
+
+<main>
+  <div class="stats">
+    <div class="stat"><strong id="digestCount">—</strong>則摘要</div>
+    <div class="stat"><strong id="flashCount">—</strong>則原始快訊</div>
+  </div>
+  <div class="digest-list" id="digestList">
+    <div class="empty">載入中…</div>
+  </div>
+</main>
+
+<script>
+const DATA_URL = './data.json';
+let allDigests = [];
+let activeCategory = '';
+
+async function load() {
+  try {
+    const res = await fetch(DATA_URL + '?t=' + Date.now());
+    const data = await res.json();
+
+    allDigests = (data.digests || []).sort((a, b) =>
+      (b.time || '').localeCompare(a.time || ''));
+
+    // Stats
+    document.getElementById('digestCount').textContent = data.digest_count || 0;
+    document.getElementById('flashCount').textContent  = data.flash_count  || 0;
+    document.getElementById('updatedAt').innerHTML =
+      `<span class="pulse"></span>更新於 ${data.updated_at || '—'}`;
+
+    // Build category buttons
+    const cats = [...new Set(allDigests.flatMap(d => d.categories || []))].sort();
+    const wrap = document.getElementById('filterWrap');
+    wrap.innerHTML = '<button class="cat-btn active" data-cat="">全部</button>';
+    cats.forEach(c => {
+      const btn = document.createElement('button');
+      btn.className = 'cat-btn';
+      btn.dataset.cat = c;
+      btn.textContent = c;
+      wrap.appendChild(btn);
+    });
+
+    render();
+  } catch(e) {
+    document.getElementById('digestList').innerHTML =
+      '<div class="empty">無法載入資料<br>' + e.message + '</div>';
+  }
+}
+
+function render() {
+  const list = document.getElementById('digestList');
+  const filtered = activeCategory
+    ? allDigests.filter(d => (d.categories||[]).includes(activeCategory))
+    : allDigests;
+
+  if (!filtered.length) {
+    list.innerHTML = '<div class="empty">暫無資料</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map((d, i) => {
+    const parts = (d.time || '').split(' ');
+    const hm = (parts[1] || '').slice(0, 5);
+    const tags = (d.categories || []).map(c =>
+      `<span class="tag">${c}</span>`).join('');
+    return `
+      <div class="card" style="animation-delay:${i * .03}s">
+        <div class="card-time">
+          <span class="t-date">${parts[0] || '—'}</span>
+          <span class="t-time">${hm}</span>
+        </div>
+        <div>
+          <div class="card-title">${d.title_zh}</div>
+          <div class="card-body">${d.content_zh}</div>
+          ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// Filter clicks
+document.getElementById('filterWrap').addEventListener('click', e => {
+  const btn = e.target.closest('.cat-btn');
+  if (!btn) return;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeCategory = btn.dataset.cat;
+  render();
+});
+
+load();
+setInterval(load, 5 * 60 * 1000); // refresh every 5 min
+</script>
+</body>
+</html>
